@@ -171,12 +171,14 @@ fi
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-source ~/.vim/bundle/gruvbox/gruvbox_256palette.sh
+if [ -f ~/.vim/bundle/gruvbox/gruvbox_256palette.sh ]; then
+    source ~/.vim/bundle/gruvbox/gruvbox_256palette.sh
+fi
 
 # Add local bin
 export PATH=${HOME}/local/bin:${PATH}
 
 # CUDA paths
-export CUDA_HOME=/usr/local/cuda-9.0
+export CUDA_HOME=/usr/local/cuda
 export PATH=${CUDA_HOME}/bin:${PATH}
 export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:$LD_LIBRARY_PATH
