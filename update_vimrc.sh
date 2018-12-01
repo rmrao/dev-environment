@@ -1,2 +1,2 @@
-cp -r .vim ~
+cp .vimrc ~
 vim +PluginInstall +qall
