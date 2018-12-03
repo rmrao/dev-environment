@@ -45,5 +45,5 @@ rm ./Miniconda3-latest-Linux-x86_64.sh
 source ~/.bashrc
 conda install python==3.6
 
-
-
+pip install -U mypy
+pip install -U flake8
