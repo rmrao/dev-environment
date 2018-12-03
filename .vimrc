@@ -17,6 +17,7 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'Konfekt/FastFold'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'Vimjas/vim-python-pep8-indent'
 
 call vundle#end()
 
