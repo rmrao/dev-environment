@@ -57,7 +57,7 @@ set autoindent
 filetype plugin indent on
 
 set background=dark
-colorscheme gruvbox 
+silent! colorscheme gruvbox 
 
 fun! <SID>StripTrailingWhitespaces()
     let l = line(".")

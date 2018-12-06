@@ -1,6 +1,6 @@
 set -e
 cp .tmux.conf ~
-if (( $EUID == 0 )); then
+if (( $EUID != 0 )); then
     git clone https://github.com/jealie/install_tmux.git && ./install_tmux/install_tmux.sh
     echo "WARNING: Not install vim as you didn't run this as root."
 else
