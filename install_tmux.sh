@@ -1,8 +1,15 @@
 set -e
 cp .tmux.conf ~
 if (( $EUID != 0 )); then
+    [[ $(dpkg-query -W --showformat='${Status}\n' curl | grep "install ok installed") ]] || { echo "curl not installed" 1>&2; exit 1; }
+    [[ $(dpkg-query -W --showformat='${Status}\n' libtool | grep "install ok installed") ]] || { echo "libtool not installed" 1>&2; exit 1; }
+    [[ $(dpkg-query -W --showformat='${Status}\n' pkg-config | grep "install ok installed") ]] || { echo "pkg-config not installed" 1>&2; exit 1; }
+    [[ $(dpkg-query -W --showformat='${Status}\n' automake | grep "install ok installed") ]] || { echo "automake not installed" 1>&2; exit 1; }
     git clone https://github.com/jealie/install_tmux.git && ./install_tmux/install_tmux.sh
-    echo "WARNING: Not install vim as you didn't run this as root."
+    echo "" >> ~/.bashrc
+    echo "export PATH=~/local/bin:\$PATH" >> ~/.bashrc
+    source ~/.bashrc
+    rm -rf ./install_tmux
 else
     apt install -y git automake build-essential pkg-config libevent-dev libncurses5-dev
     rm -fr /tmp/tmux
