@@ -1,5 +1,5 @@
 set -e
-cp -r .vim ~
+cp -r vim ${HOME}/.vim
 if (( $EUID != 0 )); then
     echo "WARNING: Not installing vim as you didn't run this as root."
 else

@@ -1,2 +1,2 @@
-cp .vimrc $HOME 
+cp vimrc "${HOME}/.vimrc"
 vim +PluginInstall +qall
