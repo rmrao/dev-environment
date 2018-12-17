@@ -9,7 +9,7 @@ else
 fi
 
 # Install Vundle and vim plugins
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+git clone https://github.com/VundleVim/Vundle.vim.git ${HOME}/.vim/bundle/Vundle.vim
 
 eval ./update_vimrc.sh
 
