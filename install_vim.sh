@@ -1,5 +1,5 @@
 set -e
-cp -r vim ${HOME}/.vim
+cp -a vim ${HOME}/.vim
 if (( $EUID != 0 )); then
     echo "WARNING: Not installing vim as you didn't run this as root."
 else
@@ -9,7 +9,7 @@ else
 fi
 
 # Install Vundle and vim plugins
-git clone https://github.com/VundleVim/Vundle.vim.git ${HOME}/.vim/bundle/Vundle.vim
+su -c 'git clone https://github.com/VundleVim/Vundle.vim.git ${HOME}/.vim/bundle/Vundle.vim' $LOGNAME
 
-eval ./update_vimrc.sh
+su -c 'eval ./update_vimrc.sh' $LOGNAME
 

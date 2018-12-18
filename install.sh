@@ -1,5 +1,5 @@
 set -e
-cp bashrc "${HOME}/.bashrc"
+cp -a bashrc "${HOME}/.bashrc"
 eval ./install_vim.sh
-eval ./install_tmux.sh
-eval ./install_python.sh
+su -c 'eval ./install_tmux.sh' $LOGNAME
+su -c 'eval ./install_python.sh' $LOGNAME

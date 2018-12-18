@@ -1,5 +1,5 @@
 set -e
-cp tmux.conf "${HOME}/.tmux.conf"
+cp -a tmux.conf "${HOME}/.tmux.conf"
 if (( $EUID != 0 )); then
     [[ $(dpkg-query -W --showformat='${Status}\n' curl | grep "install ok installed") ]] || { echo "curl not installed" 1>&2; exit 1; }
     [[ $(dpkg-query -W --showformat='${Status}\n' libtool | grep "install ok installed") ]] || { echo "libtool not installed" 1>&2; exit 1; }
