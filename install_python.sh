@@ -14,3 +14,4 @@ conda install python==3.6
 
 pip install -U mypy
 pip install -U flake8
+pip install -U autopep8
