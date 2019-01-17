@@ -9,7 +9,7 @@ else
 fi
 
 # Install Vundle and vim plugins
-su -c 'git clone https://github.com/VundleVim/Vundle.vim.git ${HOME}/.vim/bundle/Vundle.vim' $LOGNAME
+git clone https://github.com/VundleVim/Vundle.vim.git ${HOME}/.vim/bundle/Vundle.vim
 
-su -c 'eval ./update_vimrc.sh' $LOGNAME
+eval ./update_vimrc.sh
 
