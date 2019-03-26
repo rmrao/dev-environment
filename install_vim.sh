@@ -8,10 +8,12 @@ else
     apt install vim
 fi
 
-# Install Vundle and vim plugins
-git clone https://github.com/VundleVim/Vundle.vim.git ${HOME}/.vim/bundle/Vundle.vim
+if [[ ! -d ${HOME}/.vim/bundle/Vundle.vim ]]; then
+    # Install Vundle and vim plugins
+    git clone https://github.com/VundleVim/Vundle.vim.git ${HOME}/.vim/bundle/Vundle.vim
+fi
+
+eval ./update_vimrc.sh
 
 # Install YouCompleteMe
 python ${HOME}/.vim/bundle/YouCompleteMe/install.py --clang-completer --quiet
-
-eval ./update_vimrc.sh

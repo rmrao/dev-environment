@@ -93,7 +93,7 @@ set autoindent
 filetype plugin indent on
 
 set background=dark
-colorscheme gruvbox
+silent! colorscheme gruvbox
 
 au BufNewFile,BufRead *.cuh set ft=cuda
 au BufEnter *.cc set ft=cpp
