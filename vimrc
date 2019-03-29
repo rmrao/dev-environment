@@ -18,7 +18,10 @@ Plugin 'Konfekt/FastFold'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'Raimondi/delimitMate'
+Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'SirVer/ultisnips'
+Plugin 'rmrao/vim-snippets'
 
 call vundle#end()
 
@@ -53,7 +56,7 @@ let g:jedi#completions_enabled = 0
 let g:jedi#completions_command = ""
 let g:jedi#show_call_signatures = "1"
 let g:jedi#goto_assignments_command = "<leader>pa"
-let g:jedi#goto_definitions_command = "<leader>pd"
+let g:jedi#goto_command = "<leader>pd"
 let g:jedi#documentation_command = "<leader>pk"
 let g:jedi#usages_command = "<leader>pu"
 let g:jedi#rename_command = "<leader>pr"
@@ -61,6 +64,16 @@ let g:jedi#rename_command = "<leader>pr"
 " YCM settings
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_always_populate_location_list = 1
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+
+" SuperTab
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+"" Ultisnips
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<C-Space>"
+let g:UltiSnipsJumpBackwardTrigger = "<C-h>"
 
 " Navigate buffers with tabs
 nnoremap <Tab> :bnext<CR>
