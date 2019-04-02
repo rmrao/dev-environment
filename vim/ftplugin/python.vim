@@ -1,8 +1,8 @@
 " setlocal smarttab
 map <C-_> :s:^\(\s*\):\1# <CR>
 map <C-T> :s:^\(\s*\)# :\1<CR>
-nnoremap <silent> <C-k> :ALENextWrap<CR>
-nnoremap <silent> <C-j> :ALEPreviousWrap<CR>
+nnoremap <silent> <C-j> :ALENextWrap<CR>
+nnoremap <silent> <C-k> :ALEPreviousWrap<CR>
 
 let b:ale_linters = ['flake8', 'mypy']
 let b:ale_python_mypy_options = '--ignore-missing-imports'
