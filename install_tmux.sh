@@ -1,3 +1,5 @@
+#!/bin/bash
+
 set -e
 cp -a tmux.conf "${HOME}/.tmux.conf"
 if (( $EUID != 0 )); then
