@@ -17,4 +17,4 @@ fi
 
 
 source "${HOME}/.bashrc"
-${HOME}/miniconda/bin/conda install "python>=3.6,<3.7" mypy flake8 autopep8
+${HOME}/miniconda/bin/conda install "python>=3.6,<3.7" mypy flake8 autopep8 ipython

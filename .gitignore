@@ -1,5 +1,6 @@
 # Vim files
 .swp
 .swo
+*.mypy_cache/
 
 Miniconda3-latest-Linux-x86_64.sh
