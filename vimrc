@@ -18,7 +18,10 @@ Plugin 'Konfekt/FastFold'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'Raimondi/delimitMate'
+Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'SirVer/ultisnips'
+Plugin 'rmrao/vim-snippets'
 
 call vundle#end()
 
@@ -63,6 +66,15 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_always_populate_location_list = 1
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+
+" SuperTab
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+"" Ultisnips
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<C-Space>"
+let g:UltiSnipsJumpBackwardTrigger = "<C-h>"
+let g:ultisnips_python_style = "google"
 
 " Navigate buffers with tabs
 nnoremap <Tab> :bnext<CR>
