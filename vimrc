@@ -16,7 +16,6 @@ Plugin 'rmrao/python-syntax'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'Konfekt/FastFold'
 Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'Raimondi/delimitMate'
 Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe'
@@ -74,7 +73,19 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<C-Space>"
 let g:UltiSnipsJumpBackwardTrigger = "<C-h>"
+
 let g:ultisnips_python_style = "google"
+
+" Fix a bug with delimitMate and YCM
+" (https://github.com/Valloric/YouCompleteMe/issues/2696)
+imap <silent> <BS> <C-R>=YcmOnDeleteChar()<CR><Plug>delimitMateBS
+
+function! YcmOnDeleteChar()
+  if pumvisible()
+    return "\<C-y>"
+  endif
+  return ""
+endfunction
 
 " Navigate buffers with tabs
 nnoremap <Tab> :bnext<CR>
