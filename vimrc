@@ -107,7 +107,6 @@ set backspace=2
 imap jj <Esc>
 set number
 set mouse=a
-syntax on
 
 set shiftwidth=4
 set tabstop=4
@@ -116,6 +115,7 @@ set fdm=syntax
 set termguicolors
 set autoindent
 filetype plugin indent on
+syntax on
 
 set background=dark
 silent! colorscheme gruvbox
