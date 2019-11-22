@@ -21,6 +21,7 @@ Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'rmrao/vim-snippets'
+Plugin 'Valloric/MatchTagAlways'
 
 call vundle#end()
 
@@ -76,6 +77,8 @@ let g:UltiSnipsJumpBackwardTrigger = "<C-h>"
 
 let g:ultisnips_python_style = "google"
 
+let g:delimitMate_expand_cr = 1
+
 " Fix a bug with delimitMate and YCM
 " (https://github.com/Valloric/YouCompleteMe/issues/2696)
 imap <silent> <BS> <C-R>=YcmOnDeleteChar()<CR><Plug>delimitMateBS
@@ -107,6 +110,7 @@ set backspace=2
 imap jj <Esc>
 set number
 set mouse=a
+syntax on
 
 set shiftwidth=4
 set tabstop=4
@@ -115,7 +119,6 @@ set fdm=syntax
 set termguicolors
 set autoindent
 filetype plugin indent on
-syntax on
 
 set background=dark
 silent! colorscheme gruvbox
@@ -124,3 +127,5 @@ au BufNewFile,BufRead *.cuh set ft=cuda
 au BufEnter *.cc set ft=cpp
 au FileType * set fo=tcql
 au FileType python setlocal completeopt-=preview
+au FileType python setlocal indentkeys-=<:>
+au FileType python setlocal indentkeys-=:
