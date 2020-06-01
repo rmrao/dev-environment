@@ -10,18 +10,17 @@ Plugin 'w0rp/ale'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'vim-airline/vim-airline'
-Plugin 'tpope/vim-fugitive'
 Plugin 'morhetz/gruvbox'
 Plugin 'rmrao/python-syntax'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'Konfekt/FastFold'
-Plugin 'scrooloose/nerdtree'
 Plugin 'Raimondi/delimitMate'
 Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/MatchTagAlways'
 Plugin 'SirVer/ultisnips'
 Plugin 'rmrao/vim-snippets'
-Plugin 'Valloric/MatchTagAlways'
+Plugin 'lervag/vimtex'
 
 call vundle#end()
 
@@ -33,6 +32,9 @@ let g:pyindent_continue = '&sw'
 " Change python syntax highlighting to ignore space errors
 let g:python_highlight_all = 1
 let g:python_highlight_space_errors = 0
+
+" Change latex flavor
+let g:tex_flavor = "latex"
 
 " Tell airline about the other extensions being used so it can incorporate
 " them
@@ -76,8 +78,6 @@ let g:UltiSnipsJumpForwardTrigger = "<C-Space>"
 let g:UltiSnipsJumpBackwardTrigger = "<C-h>"
 
 let g:ultisnips_python_style = "google"
-
-let g:delimitMate_expand_cr = 1
 
 " Fix a bug with delimitMate and YCM
 " (https://github.com/Valloric/YouCompleteMe/issues/2696)
