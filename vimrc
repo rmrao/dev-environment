@@ -22,6 +22,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'rmrao/vim-snippets'
 Plugin 'Valloric/MatchTagAlways'
+Plugin 'psf/black'
 
 call vundle#end()
 
