@@ -14,6 +14,7 @@ Plugin 'morhetz/gruvbox'
 Plugin 'rmrao/python-syntax'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'Konfekt/FastFold'
+Plugin 'scrooloose/nerdtree'
 Plugin 'Raimondi/delimitMate'
 Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe'
@@ -69,14 +70,8 @@ let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 
 " SuperTab
-let g:SuperTabDefaultCompletionType = '<C-n>'
-
-"" Ultisnips
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<C-Space>"
-let g:UltiSnipsJumpBackwardTrigger = "<C-h>"
-
-let g:ultisnips_python_style = "google"
+let g:SuperTabDefaultCompletionType = '<C-o>'
+let g:delimitMate_expand_cr = 1
 
 " Fix a bug with delimitMate and YCM
 " (https://github.com/Valloric/YouCompleteMe/issues/2696)
