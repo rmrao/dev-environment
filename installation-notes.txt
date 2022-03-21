@@ -1,0 +1,8 @@
+Steps
+* Install oh-my-zsh
+* Install gruvbox https://github.com/sbugzu/gruvbox-zsh
+* Hack Nerd Font
+* Pytorch cannot be installed w/ conda on Mac M1, must use wheels (pip)
+* homebrew must be installed from default script, which puts it in /opt/homebrew on Mac M1
+* YCM requires ARM versions of LLVM, etc. - see https://gist.github.com/bobsomers/f733711b239d32268cb6dcbd87d44568
+* pyforest

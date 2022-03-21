@@ -1,1 +1,0 @@
-/Users/roshan_rao/projects/dev-environment/roshan.zsh-theme

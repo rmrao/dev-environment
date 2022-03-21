@@ -9,7 +9,7 @@ with contextlib.suppress(ImportError):
     np.set_printoptions(suppress=True)
 
 
-with contextlib.suppress(ImportError):
-    import torch
-    import torch.nn as nn
-    import torch.nn.functional as F
+# with contextlib.suppress(ImportError):
+    # import torch
+    # import torch.nn as nn
+    # import torch.nn.functional as F
