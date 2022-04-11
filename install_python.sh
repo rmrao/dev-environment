@@ -13,6 +13,5 @@ if [[ ! -d ${HOME}/miniconda ]]; then
 fi
 
 
-source "${HOME}/.bashrc"
-${HOME}/miniconda/bin/conda create -n default "python>=3.8" mypy flake8 autopep8 ipython cython pytorch cudatoolkit=10.2 torchvision biopython jupyter matplotlib seaborn pandas numpy scipy -c pytorch
-echo "conda activate default" >> "${HOME}/.bashrc"
+source "${HOME}/.zshrc"
+${HOME}/miniconda/bin/conda create -n default "python>=3.9" mypy flake8 autopep8 ipython cython pytorch cudatoolkit torchvision biopython jupyter matplotlib seaborn pandas numpy scipy -c pytorch
