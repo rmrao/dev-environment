@@ -1,6 +1,7 @@
 Steps
 * Install oh-my-zsh
-* Install gruvbox https://github.com/sbugzu/gruvbox-zsh
+* Install zsh gruvbox theme: https://github.com/sbugzu/gruvbox-zsh
+* Install iterm gruvbox colors https://raw.githubusercontent.com/morhetz/gruvbox-contrib/master/iterm2/gruvbox-dark.itermcolors
 * Hack Nerd Font
 * Pytorch cannot be installed w/ conda on Mac M1, must use wheels (pip)
 * homebrew must be installed from default script, which puts it in /opt/homebrew on Mac M1
