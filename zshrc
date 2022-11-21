@@ -1,6 +1,9 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-PATH+=:~/.local/bin
+source /etc/profile
+path=("$HOME/.local/bin" $path)
+export PATH
+# echo $PATH
+# export PATH="$HOME/.local/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -70,7 +73,7 @@ ZSH_THEME="gruvbox"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git ssh-agent)
-zstyle :omz:plugins:ssh-agent agent-forwarding on
+# zstyle :omz:plugins:ssh-agent agent-forwarding on
 
 source $ZSH/oh-my-zsh.sh
 
@@ -83,9 +86,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-    export EDITOR='vim'
+    export EDITOR='nvim'
 else
-    export EDITOR='mvim'
+    export EDITOR='nvim'
 fi
 
 # Compilation flags
@@ -102,6 +105,13 @@ fi
 alias ssh='ssh -Y -A'
 alias ls='ls -G'
 alias ll='ls -lhG'
+alias countseqs="grep -c '^>'"
+alias checkout-32gb='srun --gpus-per-node=1 --partition=devaccel --time=300 --cpus-per-task 10 --ntasks-per-node 1 --mem=50G --constraint volta32gb --pty zsh -l'
+alias checkout-node='srun --gpus-per-node=8 --partition=devaccel --time=300 --cpus-per-task 80 --ntasks-per-node 1 --mem=375G --constraint volta32gb --pty zsh -l'
+alias sq='squeue --me -o "%.18i %.9P %.128j %.8u %.2t %.10M %.6D %R"'
+# alias sq='squeue -u rmrao'
+
+export PATH="$PATH:/usr/local/cuda-11.4/bin"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -117,4 +127,6 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-conda activate default
+conda activate proteinseq
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
