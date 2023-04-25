@@ -3,4 +3,7 @@
 .swo
 *.mypy_cache/
 
+# Compiled plugins
+nvim/plugins
+
 Miniconda3-latest-Linux-x86_64.sh

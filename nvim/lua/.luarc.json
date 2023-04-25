@@ -1,0 +1,30 @@
+{
+    "workspace.library": [
+        "/Users/rmrao/.local/share/nvim/site/pack/packer/start/neodev.nvim/types/stable",
+        "/opt/homebrew/Cellar/neovim/0.9.0/share/nvim/runtime/lua",
+        "/Users/rmrao/.local/share/nvim/site/pack/packer/opt/Comment.nvim/lua",
+        "/Users/rmrao/.local/share/nvim/site/pack/packer/opt/coq.thirdparty/lua",
+        "/Users/rmrao/.local/share/nvim/site/pack/packer/opt/coq_nvim/lua",
+        "/Users/rmrao/.local/share/nvim/site/pack/packer/opt/indent-blankline.nvim/lua",
+        "/Users/rmrao/.local/share/nvim/site/pack/packer/opt/leap.nvim/lua",
+        "/Users/rmrao/.local/share/nvim/site/pack/packer/opt/lualine.nvim/lua",
+        "/Users/rmrao/.local/share/nvim/site/pack/packer/opt/neogit/lua",
+        "/Users/rmrao/.local/share/nvim/site/pack/packer/opt/nvim-bufferline.lua/lua",
+        "/Users/rmrao/.local/share/nvim/site/pack/packer/opt/nvim-gps/lua",
+        "/Users/rmrao/.local/share/nvim/site/pack/packer/opt/nvim-tree.lua/lua",
+        "/Users/rmrao/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons/lua",
+        "/Users/rmrao/.local/share/nvim/site/pack/packer/opt/plenary.nvim/lua",
+        "/Users/rmrao/.local/share/nvim/site/pack/packer/opt/which-key.nvim/lua",
+        "/Users/rmrao/.local/share/nvim/site/pack/packer/start/fzf-lua/lua",
+        "/Users/rmrao/.local/share/nvim/site/pack/packer/start/gruvbox-material/lua",
+        "/Users/rmrao/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim/lua",
+        "/Users/rmrao/.local/share/nvim/site/pack/packer/start/mason-tool-installer.nvim/lua",
+        "/Users/rmrao/.local/share/nvim/site/pack/packer/start/mason.nvim/lua",
+        "/Users/rmrao/.local/share/nvim/site/pack/packer/start/neodev.nvim/lua",
+        "/Users/rmrao/.local/share/nvim/site/pack/packer/start/nvim-lspconfig/lua",
+        "/Users/rmrao/.local/share/nvim/site/pack/packer/start/nvim-treesitter/lua",
+        "/Users/rmrao/.local/share/nvim/site/pack/packer/start/packer.nvim/lua",
+        "/Users/rmrao/projects/dev-environment/nvim/lua",
+        "${3rd}/luv/library"
+    ]
+}

@@ -1,3 +1,8 @@
+alias ssh='ssh -Y -A'
+alias ls='ls -G'
+alias ll='ls -lhG'
+alias python='python 3'
+alias pip='pip3'
 alias ll='ls -lh'
 alias countseqs='grep -c "^>"'
 alias fixssh='eval $(tmux showenv -s SSH_AUTH_SOCK)'
