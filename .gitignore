@@ -4,6 +4,7 @@
 *.mypy_cache/
 
 # Compiled plugins
-nvim/plugins
+nvim/package-lock.json
+nvim/plugin
 
 Miniconda3-latest-Linux-x86_64.sh

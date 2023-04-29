@@ -2,12 +2,68 @@ local M = {}
 
 local servers = {
   html = {},
-  jsonls = {},
-  pyright = {},
+  jsonls = {
+    settings = {
+      json = {
+        schemas = require("schemastore").json.schemas(),
+      },
+    },
+	},
+  pyright = {
+    settings = {
+      python = {
+        analysis = {
+          typeCheckingMode = "on",
+          autoSearchPaths = true,
+          useLibraryCodeForTypes = true,
+          diagnosticMode = "workspace",
+        },
+      },
+    },
+	},
   rust_analyzer = {},
-  lua_ls = {},
+  lua_ls = {
+    settings = {
+      Lua = {
+        runtime = {
+          -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+          version = "LuaJIT",
+          -- Setup your lua path
+          path = vim.split(package.path, ";"),
+        },
+        diagnostics = {
+          -- Get the language server to recognize the `vim` global
+          globals = { "vim", "describe", "it", "before_each", "after_each", "packer_plugins", "MiniTest" },
+          -- disable = { "lowercase-global", "undefined-global", "unused-local", "unused-vararg", "trailing-space" },
+        },
+        workspace = {
+          checkThirdParty = false,
+        },
+        completion = { callSnippet = "Replace" },
+        telemetry = { enable = false },
+        hint = {
+          enable = false,
+        },
+      },
+    },
+	},
   tsserver = {},
+  dockerls = {},
   vimls = {},
+  -- yamlls = {
+  --   schemastore = {
+  --     enable = true,
+  --   },
+  --   settings = {
+  --     yaml = {
+  --       hover = true,
+  --       completion = true,
+  --       validate = true,
+  --       schemas = require("schemastore").json.schemas(),
+  --     },
+  --   },
+  -- },
+
 }
 
 local function on_attach(client, bufnr)

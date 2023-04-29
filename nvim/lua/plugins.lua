@@ -206,6 +206,7 @@ function M.setup()
         "folke/neodev.nvim",
 				"RRethy/vim-illuminate",
 				"jose-elias-alvarez/null-ls.nvim",
+        { "b0o/schemastore.nvim", module = { "schemastore" } },
 				{
 					"j-hui/fidget.nvim",
 					config = function()
@@ -214,6 +215,10 @@ function M.setup()
 				},
 			},
 		}
+
+		-- Remote Docker
+		use { "jamestthompson3/nvim-remote-containers" }
+
 
     if packer_bootstrap then
       print "Restart Neovim required after installation!"
