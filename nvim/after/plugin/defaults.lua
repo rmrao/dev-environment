@@ -21,6 +21,24 @@ opt.signcolumn = "yes" -- Always show sign column
 opt.clipboard = "unnamedplus" -- Access system clipboard
 opt.timeoutlen = 500 -- Time in milliseconds to wait for a mapped sequence to complete.
 
+opt.joinspaces = false -- No double spaces with join after a dot
+opt.sessionoptions = "buffers,curdir,help,tabpages,winsize,winpos,terminal"
+opt.smartindent = true --Smart indent
+opt.expandtab = true
+opt.smarttab = true
+opt.textwidth = 0
+opt.autoindent = true
+opt.shiftwidth = 4
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.splitbelow = true
+opt.splitright = true
+opt.laststatus = 3 -- Global statusline
+opt.cmdheight = 1 -- 0
+opt.scrollback = 100000
+opt.splitkeep = "screen"
+opt.hidden = true
+
 -- Better Netrw
 g.netrw_banner = 0 -- Hide banner
 g.netrw_browse_split = 4 -- Open in previous window

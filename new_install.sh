@@ -16,3 +16,4 @@ ln -sf ${CURR}/zshrc ${HOME}/.zshrc
 ln -sf ${CURR}/gitignore ${HOME}/.gitignore
 ln -sf ${CURR}/tmux.conf ${HOME}/.tmux.conf
 ln -sf ${CURR}/nvim ${HOME}/.config/nvim
+ln -sf ${CURR}/oh-my-zsh/gruvbox.zsh-theme ${HOME}/.oh-my-zsh/custom/themes/gruvbox.zsh-theme

@@ -66,27 +66,59 @@ local servers = {
 
 }
 
-local function on_attach(client, bufnr)
+function M.on_attach(client, bufnr)
+  local caps = client.server_capabilities
   -- Enable completion triggered by <C-X><C-O>
   -- See `:help omnifunc` and `:help ins-completion` for more information.
-  vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+  if caps.completionProvider then
+      vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
+  end
 
   -- Use LSP as the handler for formatexpr.
   -- See `:help formatexpr` for more information.
-  vim.api.nvim_buf_set_option(0, "formatexpr", "v:lua.vim.lsp.formatexpr()")
+  if caps.documentFormattingProvider then
+    vim.bo[bufnr].formatexpr = "v:lua.vim.lsp.formatexpr()"
+  end
 
   -- Configure key mappings
   require("config.lsp.keymaps").setup(client, bufnr)
+
+  -- Configure formatting
+  require("config.lsp.null-ls.formatters").setup(client, bufnr)
 end
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities.textDocument.foldingRange = {
+  dynamicRegistration = false,
+  lineFoldingOnly = true,
+}
+capabilities.textDocument.completion.completionItem.resolveSupport = {
+  properties = {
+    "documentation",
+    "detail",
+    "additionalTextEdits",
+  },
+}
+
+M.capabilities = capabilities
+
+
 local opts = {
-  on_attach = on_attach,
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
   flags = {
     debounce_text_changes = 150,
   },
 }
 
+-- Setup LSP handlers
+-- require("config.lsp.handlers").setup()
+
 function M.setup()
+	-- null-ls
+	require("config.lsp.null-ls").setup(opts)
+
   require("config.lsp.installer").setup(servers, opts)
 end
 
