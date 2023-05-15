@@ -46,6 +46,17 @@ g.netrw_altv = 1 -- Open with right splitting
 g.netrw_liststyle = 3 -- Tree-style view
 g.netrw_list_hide = (vim.fn["netrw_gitignore#Hide"]()) .. [[,\(^\|\s\s\)\zs\.\S\+]] -- use .gitignore
 
+-- Folding
+-- Treesitter based folding
+opt.foldlevel = 3
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+
+-- opt.foldcolumn = "1"
+-- opt.foldlevel = 99
+-- opt.foldlevelstart = -1
+-- opt.foldenable = true
+
 -- Highlight on yank
 vim.cmd [[
   augroup YankHighlight
