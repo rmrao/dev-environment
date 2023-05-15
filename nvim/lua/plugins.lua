@@ -216,10 +216,13 @@ function M.setup()
 					end,
 				},
 			},
+
 		}
 
 		-- Remote Docker
 		use { "jamestthompson3/nvim-remote-containers" }
+
+    use { "Vimjas/vim-python-pep8-indent" }
 
 
     if packer_bootstrap then
