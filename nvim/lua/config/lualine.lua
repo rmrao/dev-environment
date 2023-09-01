@@ -45,7 +45,7 @@ local function lsp_client(msg)
 end
 
 function M.setup()
-  local gps = require "nvim-gps"
+  local navic = require "nvim-navic"
 
   require("lualine").setup {
     options = {
@@ -62,8 +62,8 @@ function M.setup()
       lualine_b = { "branch", "diff", "diagnostics" },
       lualine_c = {
         {
-          gps.get_location,
-          cond = gps.is_available,
+          navic.get_location,
+          cond = navic.is_available,
           color = { fg = "#f3ca28" },
         },
         { separator },
