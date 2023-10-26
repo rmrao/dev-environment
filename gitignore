@@ -1,8 +1,10 @@
-scratch/
 .coverage
-wandb/
 *.ckpt
 .code_snapshots/
+scratch/
+wandb/
+checkpoints/
+outputs/
 
 # Mac
 .DS_Store
