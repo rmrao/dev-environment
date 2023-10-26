@@ -1,7 +1,4 @@
-curl -O https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/Hack.zip
-CURR=`pwd`
-ln -sf ${CURR}/aliases ${HOME}/.aliases
-ln -sf ${CURR}/zshrc ${HOME}/.zshrc
-ln -sf ${CURR}/gitignore ${HOME}/.gitignore
-ln -sf ${CURR}/tmux.conf ${HOME}/.tmux.conf
-ln -sf ${CURR}/nvim ${HOME}/.config/nvim
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+source ./install_symlinks.sh
+cp oh-my-zsh/gruvbox.zsh-theme ~/.oh-my-zsh/custom/themes
+source ~/.sinstall_nvim.sh

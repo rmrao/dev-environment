@@ -1,9 +1,10 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-path=(~/.local/bin /opt/homebrew/bin $path)
+path=(~/.local/bin /opt/homebrew/bin /opt/slurm/bin $path)
 export PATH
 
 # Path to your oh-my-zsh installation.
+export GOOGLE_APPLICATION_CREDENTIALS="${HOME}/.config/gcloud/evolutionaryscale-data-9d07eeb34d7d.json"
 export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
@@ -115,3 +116,17 @@ unset __conda_setup
 # <<< conda initialize <<<
 # conda activate default
 
+
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'mamba init' !!
+export MAMBA_EXE='/admin/rrao/.local/bin/micromamba';
+export MAMBA_ROOT_PREFIX='/admin/rrao/micromamba';
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    alias micromamba="$MAMBA_EXE"  # Fallback on help from mamba activate
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<
+micromamba activate evolutionaryscale

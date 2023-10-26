@@ -1,4 +1,8 @@
+scratch/
 .coverage
+wandb/
+*.ckpt
+.code_snapshots/
 
 # Mac
 .DS_Store
