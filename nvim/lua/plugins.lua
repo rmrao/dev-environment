@@ -160,11 +160,15 @@ function M.setup()
       end,
     }
 
-    use { 'junegunn/fzf', run = './install --bin', }
-
+    -- use { 'junegunn/fzf', run = './install --bin', }
+    --
+    -- use {
+    --   "ibhagwan/fzf-lua",
+    --   requires = { "kyazdani42/nvim-web-devicons" },
+    -- }
     use {
-      "ibhagwan/fzf-lua",
-      requires = { "kyazdani42/nvim-web-devicons" },
+      'nvim-telescope/telescope.nvim', tag = '0.1.6',
+      requires = { {'nvim-lua/plenary.nvim'} }
     }
 
     -- Completion
