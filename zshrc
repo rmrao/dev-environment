@@ -7,6 +7,7 @@ export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
 # Path to your oh-my-zsh installation.
 export GOOGLE_APPLICATION_CREDENTIALS="${HOME}/.config/gcloud/evolutionaryscale-data-9d07eeb34d7d.json"
 export ZSH="$HOME/.oh-my-zsh"
+export AWS_PROFILE=research_default
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -100,6 +101,8 @@ export EDITOR='nvim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/.aliases
+# export PROMPT='%(!.%{%F{yellow}%}.)$USER@%{$fg[white]%}%M ${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
+
 
 
 # >>> mamba initialize >>>
@@ -115,4 +118,4 @@ fi
 
 unset __mamba_setup
 # <<< mamba initialize <<<
-micromamba activate evolutionaryscale
+micromamba activate evolutionaryscale-20240308
