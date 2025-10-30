@@ -1,0 +1,226 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://www.schemastore.org/claude-code-settings.json",
+  "$ref": "#/definitions/ClaudeCodeSettings",
+  "definitions": {
+    "ClaudeCodeSettings": {
+      "type": "object",
+      "properties": {
+        "$schema": {
+          "type": "string",
+          "const": "https://json.schemastore.org/claude-code-settings.json",
+          "description": "JSON Schema reference for Claude Code settings"
+        },
+        "apiKeyHelper": {
+          "type": "string",
+          "description": "Path to a script that outputs authentication values"
+        },
+        "awsCredentialExport": {
+          "type": "string",
+          "description": "Path to a script that exports AWS credentials"
+        },
+        "awsAuthRefresh": {
+          "type": "string",
+          "description": "Path to a script that refreshes AWS authentication"
+        },
+        "cleanupPeriodDays": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of days to retain chat transcripts (0 to disable cleanup)"
+        },
+        "env": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Environment variables to set for Claude Code sessions"
+        },
+        "includeCoAuthoredBy": {
+          "type": "boolean",
+          "description": "Whether to include Claude's co-authored by attribution in commits and PRs (defaults to true)"
+        },
+        "permissions": {
+          "type": "object",
+          "properties": {
+            "allow": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "List of permission rules for allowed operations"
+            },
+            "deny": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "List of permission rules for denied operations"
+            },
+            "ask": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "List of permission rules that should always prompt for confirmation"
+            },
+            "defaultMode": {
+              "type": "string",
+              "enum": [
+                "acceptEdits",
+                "bypassPermissions",
+                "default",
+                "plan"
+              ],
+              "description": "Default permission mode when Claude Code needs access"
+            },
+            "disableBypassPermissionsMode": {
+              "type": "string",
+              "enum": [
+                "disable"
+              ],
+              "description": "Disable the ability to bypass permission prompts"
+            },
+            "additionalDirectories": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Additional directories to include in the permission scope"
+            }
+          },
+          "additionalProperties": false,
+          "description": "Tool usage permissions configuration"
+        },
+        "model": {
+          "type": "string",
+          "description": "Override the default model used by Claude Code"
+        },
+        "enableAllProjectMcpServers": {
+          "type": "boolean",
+          "description": "Whether to automatically approve all MCP servers in the project"
+        },
+        "enabledMcpjsonServers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of approved MCP servers from .mcp.json"
+        },
+        "disabledMcpjsonServers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of rejected MCP servers from .mcp.json"
+        },
+        "hooks": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "matcher": {
+                  "type": "string",
+                  "description": "String pattern to match (e.g. tool names like \"Write\")"
+                },
+                "hooks": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "const": "command",
+                        "description": "Hook type (currently only \"command\" is supported)"
+                      },
+                      "command": {
+                        "type": "string",
+                        "description": "Shell command to execute"
+                      },
+                      "timeout": {
+                        "type": "number",
+                        "exclusiveMinimum": 0,
+                        "description": "Timeout in seconds for this specific command"
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "command"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "description": "List of hooks to execute when the matcher matches"
+                }
+              },
+              "required": [
+                "hooks"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "description": "Custom commands to run before/after tool executions"
+        },
+        "disableAllHooks": {
+          "type": "boolean",
+          "description": "Disable all hooks and statusLine execution"
+        },
+        "statusLine": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "command"
+            },
+            "command": {
+              "type": "string"
+            },
+            "padding": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "type",
+            "command"
+          ],
+          "additionalProperties": false,
+          "description": "Custom status line display configuration"
+        },
+        "enabledPlugins": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "description": "Enabled plugins by repository. Keys are repository names, values are arrays of enabled plugin names"
+        },
+        "forceLoginMethod": {
+          "type": "string",
+          "enum": [
+            "claudeai",
+            "console"
+          ],
+          "description": "Force a specific login method: \"claudeai\" for Claude Pro/Max, \"console\" for Console billing"
+        },
+        "otelHeadersHelper": {
+          "type": "string",
+          "description": "Path to a script that outputs OpenTelemetry headers"
+        },
+        "outputStyle": {
+          "type": "string",
+          "description": "Controls the output style for assistant responses"
+        },
+        "skipWebFetchPreflight": {
+          "type": "boolean",
+          "description": "Skip the WebFetch blocklist check for enterprise environments with restrictive security policies"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "title": "Claude Code Settings",
+  "description": "Configuration settings for Claude Code. Learn more: https://docs.anthropic.com/en/docs/claude-code/settings",
+  "$comment": "Generated on 2025-08-22T00:43:26.418Z"
+}

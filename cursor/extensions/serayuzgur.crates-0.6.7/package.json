@@ -1,0 +1,241 @@
+{
+	"name": "crates",
+	"displayName": "crates",
+	"description": "Helps Rust developers managing dependencies with Cargo.toml.",
+	"version": "0.6.7",
+	"publisher": "serayuzgur",
+	"author": {
+		"name": "serayuzgur",
+		"email": "serayuzgur@gmail.com"
+	},
+	"license": "SEE LICENSE IN LICENSE",
+	"bugs": {
+		"url": "https://github.com/serayuzgur/crates/issues",
+		"email": "serayuzgur@gmail.com"
+	},
+	"homepage": "https://github.com/serayuzgur/crates/blob/master/README.md",
+	"engines": {
+		"vscode": "^1.79.1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/serayuzgur/crates.git"
+	},
+	"icon": "icon.png",
+	"keywords": [
+		"rust",
+		"crates",
+		"cargo",
+		"toml"
+	],
+	"categories": [
+		"Programming Languages",
+		"Other"
+	],
+	"activationEvents": [
+		"onLanguage:toml",
+		"workspaceContains:*/Cargo.toml"
+	],
+	"contributes": {
+		"commands": [
+			{
+				"command": "crates.replaceVersion",
+				"title": "Do not call manually ! Replace Version of the provided dependency",
+				"category": "👆 Crates"
+			},
+			{
+				"command": "crates.retry",
+				"title": "Retry to fetch Cargo.toml",
+				"category": "👆 Crates"
+			},
+			{
+				"command": "crates.updateAll",
+				"title": "Update All dependencies of the Cargo.toml",
+				"category": "👆 Crates"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "Crates",
+			"properties": {
+				"crates.listPreReleases": {
+					"type": "boolean",
+					"scope": "resource",
+					"default": false,
+					"description": "If true, pre-release versions will be available."
+				},
+				"crates.indexServerURL": {
+					"type": "string",
+					"scope": "resource",
+					"description": "URL of the index server. Default value goes to official sparse index. Alternative values would be onpremise index servers.",
+					"default": "https://index.crates.io"
+				},
+				"crates.errorDecorator": {
+					"type": "string",
+					"scope": "resource",
+					"default": "❗️❗️❗️",
+					"description": "The text to show when a dependency has errors."
+				},
+				"crates.errorDecoratorCss": {
+					"type": "object",
+					"default": null,
+					"properties": {
+						"after": {
+							"type": "object",
+							"default": null,
+							"scope": "resource",
+							"description": "Text styling",
+							"properties": {
+								"color": {
+									"type": "string",
+									"scope": "resource",
+									"default": "#ffffffff",
+									"format": "color",
+									"description": "css color"
+								},
+								"border": {
+									"type": "string",
+									"scope": "resource",
+									"default": "2px ",
+									"description": "css border"
+								},
+								"backgroundColor": {
+									"type": "string",
+									"scope": "resource",
+									"default": "#00000000",
+									"format": "color",
+									"description": "css background-color"
+								}
+							}
+						},
+						"description": "Text that appears at the end of the line"
+					},
+					"description": "CSS to be applied to a line when there is a dependency error"
+				},
+				"crates.incompatibleDecorator": {
+					"type": "string",
+					"scope": "resource",
+					"default": "❌ ${version}",
+					"description": "The text template to show when a dependency is not semver compatible. ${version} will be replaced by the latest version info."
+				},
+				"crates.incompatibleDecoratorCss": {
+					"type": "object",
+					"default": null,
+					"properties": {
+						"after": {
+							"type": "object",
+							"default": null,
+							"scope": "resource",
+							"description": "Text styling",
+							"properties": {
+								"color": {
+									"type": "string",
+									"scope": "resource",
+									"default": "#ffffffff",
+									"format": "color",
+									"description": "css color"
+								},
+								"border": {
+									"type": "string",
+									"scope": "resource",
+									"default": "",
+									"description": "css border"
+								},
+								"backgroundColor": {
+									"type": "string",
+									"scope": "resource",
+									"default": "#00000000",
+									"format": "color",
+									"description": "css background-color"
+								}
+							}
+						}
+					},
+					"description": "CSS to be applied to an incompatible line"
+				},
+				"crates.compatibleDecorator": {
+					"type": "string",
+					"scope": "resource",
+					"default": "✅",
+					"description": "The text template to show when a dependency is semver compatible. ${version} will be replaced by the latest version info."
+				},
+				"crates.compatibleDecoratorCss": {
+					"type": "object",
+					"default": null,
+					"properties": {
+						"after": {
+							"type": "object",
+							"default": null,
+							"scope": "resource",
+							"description": "Text styling",
+							"properties": {
+								"color": {
+									"type": "string",
+									"scope": "resource",
+									"default": "#ffffffff",
+									"format": "color",
+									"description": "css color"
+								},
+								"border": {
+									"type": "string",
+									"scope": "resource",
+									"default": null,
+									"description": "css border"
+								},
+								"backgroundColor": {
+									"type": "string",
+									"scope": "resource",
+									"default": "#00000000",
+									"format": "color",
+									"description": "css background-color"
+								}
+							}
+						}
+					},
+					"description": "CSS to be applied to a compatible line"
+				}
+			}
+		}
+	},
+	"main": "./out/main.js",
+	"scripts": {
+		"vscode:prepublish": "npm run esbuild-base -- --minify",
+		"esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/main.js --external:vscode --format=cjs --platform=node --metafile=meta.json",
+		"esbuild": "npm run esbuild-base -- --sourcemap",
+		"esbuild-watch": "npm run esbuild-base -- --sourcemap --watch",
+		"test-compile": "tsc -p ./"
+	},
+	"types": "vscode",
+	"devDependencies": {
+		"@types/glob": "^8.1.0",
+		"@types/mocha": "^10.0.1",
+		"@types/node": "20.3.3",
+		"@types/vscode": "^1.79.1",
+		"@typescript-eslint/eslint-plugin": "^5.60.1",
+		"@typescript-eslint/parser": "^5.60.1",
+		"@vscode/test-electron": "^2.3.3",
+		"esbuild": "0.18.11",
+		"eslint": "^8.44.0",
+		"glob": "^10.3.1",
+		"mocha": "^10.2.0",
+		"typescript": "^5.1.6"
+	},
+	"dependencies": {
+		"node-cache": "5.1.2",
+		"semver": "7.5.3"
+	},
+	"__metadata": {
+		"id": "6a95a3fd-3a5d-4326-b8ab-1b1653b1f183",
+		"publisherId": "f3db93d2-daa2-4a16-a789-41ffbe82294a",
+		"publisherDisplayName": "Seray Uzgur",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1730580396962,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery",
+		"size": 441739
+	}
+}

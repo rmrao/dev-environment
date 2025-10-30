@@ -1,0 +1,48 @@
+{
+	"name": "rust-bundle",
+	"displayName": "rust",
+	"version": "1.0.0",
+	"publisher": "1YiB",
+	"description": "extensions for rust",
+	"categories": [
+		"Extension Packs"
+	],
+	"icon": "assets/icon.png",
+	"galleryBanner": {
+		"color": "#000000",
+		"theme": "dark"
+	},
+	"engines": {
+		"vscode": "^1.74.0"
+	},
+	"extensionPack": [
+		"rust-lang.rust-analyzer",
+		"serayuzgur.crates",
+		"dustypomerleau.rust-syntax"
+	],
+	"license": "LICENSE",
+	"markdown": "github",
+	"bugs": {
+		"url": "https://github.com/1YiB/vsc-bundle/issues",
+		"email": "1YiB@proton.me"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/1YiB/vsc-bundle"
+	},
+	"homepage": "https://github.com/1YiB/vsc-bundle/tree/main/rust",
+	"__metadata": {
+		"id": "20c71a43-f1bb-495d-ae85-684cdc5b5377",
+		"publisherId": "a321960e-effd-4969-8677-5dd0ffa8270e",
+		"publisherDisplayName": "1YiB",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1730580396940,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery",
+		"size": 11565
+	}
+}

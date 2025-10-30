@@ -1,0 +1,65 @@
+{
+	"name": "dark-mode-darcula",
+	"displayName": "Dark Mode - Mac OS",
+	"description": "Themes Darcula and Gruvbox with Dark Mode BG Colors",
+	"publisher": "sldobri",
+	"version": "1.0.22",
+	"license": "Apache-2.0",
+	"icon": "logo.png",
+	"galleryBanner": {
+		"color": "#0b1015",
+		"theme": "dark"
+	},
+	"homepage": "https://github.com/dobbbri/dark-mode-darcula/blob/master/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/dobbbri/dark-mode-darcula.git"
+	},
+	"bugs": {
+		"url": "https://github.com/dobbbri/dark-mode-darcula/issues"
+	},
+	"engines": {
+		"vscode": "^1.15.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Darcula - Dark Mode",
+				"uiTheme": "vs-dark",
+				"path": "./themes/Dark-Mode-Darcula.json"
+			},
+			{
+				"label": "Darcula - Original",
+				"uiTheme": "vs-dark",
+				"path": "./themes/Original-Darcula.json"
+			},
+			{
+				"label": "Gruvbox - Dark Mode",
+				"uiTheme": "vs-dark",
+				"path": "./themes/Dark-Mode-Gruvbox.json"
+			},
+			{
+				"label": "Gruvbox - Original",
+				"uiTheme": "vs-dark",
+				"path": "./themes/Original-Gruvbox.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "f349aeeb-43f5-4f7f-988b-5b4464c6fd5b",
+		"publisherId": "688471b5-3365-4cd5-8597-783c039d84e3",
+		"publisherDisplayName": "dobbbri",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1719515224772,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery",
+		"size": 374135
+	}
+}

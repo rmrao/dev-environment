@@ -1,0 +1,162 @@
+{
+	"name": "path-autocomplete",
+	"displayName": "Path Autocomplete",
+	"description": "Provides path completion for visual studio code and VS Code for Web.",
+	"version": "1.25.0",
+	"publisher": "ionutvmi",
+	"icon": "icon.png",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mihai-vlc/path-autocomplete"
+	},
+	"bugs": {
+		"url": "https://github.com/mihai-vlc/path-autocomplete/issues",
+		"email": "mihai.vlc11@gmail.com"
+	},
+	"engines": {
+		"vscode": "^1.69.0"
+	},
+	"keywords": [
+		"path",
+		"suggestion",
+		"autocomplete",
+		"intellisense",
+		"alias"
+	],
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"main": "./out/src/extension",
+	"browser": "./out/web/extension.js",
+	"scripts": {
+		"vscode:prepublish": "npm run compile && npm run compile-web",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"type-check": "tsc -p ./tsconfig.json --noEmit",
+		"lint": "eslint -c .eslintrc.js --ext .ts",
+		"compile-web": "webpack --config ./build/web-extension.webpack.config.js",
+		"watch-web": "webpack --watch --config ./build/web-extension.webpack.config.js"
+	},
+	"dependencies": {
+		"minimatch": "5.0.1",
+		"normalize-path": "3.0.0"
+	},
+	"devDependencies": {
+		"@types/minimatch": "3.0.5",
+		"@types/node": "18.6.2",
+		"@types/vscode": "1.69.0",
+		"@typescript-eslint/eslint-plugin": "5.31.0",
+		"@typescript-eslint/parser": "5.31.0",
+		"eslint": "8.20.0",
+		"eslint-config-prettier": "8.5.0",
+		"os-browserify": "0.3.0",
+		"prettier": "2.5.1",
+		"ts-loader": "9.3.1",
+		"typescript": "4.7.4",
+		"webpack": "5.74.0",
+		"webpack-cli": "4.10.0"
+	},
+	"contributes": {
+		"configuration": {
+			"type": "object",
+			"title": "path-autocomplete",
+			"properties": {
+				"path-autocomplete.extensionOnImport": {
+					"type": "boolean",
+					"default": false,
+					"description": "Adds the extension when inserting file on import or require statements.",
+					"scope": "language-overridable"
+				},
+				"path-autocomplete.includeExtension": {
+					"type": "boolean",
+					"default": true,
+					"description": "Adds the extension when inserting file names.",
+					"scope": "language-overridable"
+				},
+				"path-autocomplete.excludedItems": {
+					"type": "object",
+					"default": {},
+					"description": "Allows you to exclude certain files from the suggestions.",
+					"scope": "language-overridable"
+				},
+				"path-autocomplete.pathMappings": {
+					"type": "object",
+					"default": {},
+					"description": "Defines custom mappings for the autocomplete paths.",
+					"scope": "language-overridable"
+				},
+				"path-autocomplete.pathSeparators": {
+					"type": "string",
+					"default": " \t({[",
+					"description": "Defines the separators for support outside string.",
+					"scope": "language-overridable"
+				},
+				"path-autocomplete.transformations": {
+					"type": "array",
+					"default": [],
+					"description": "Custom transformations applied to the inserted text.",
+					"scope": "language-overridable"
+				},
+				"path-autocomplete.triggerOutsideStrings": {
+					"type": "boolean",
+					"default": false,
+					"description": "Enables path autocompletion outside strings.",
+					"scope": "language-overridable"
+				},
+				"path-autocomplete.disableUpOneFolder": {
+					"type": "boolean",
+					"default": true,
+					"description": "Disabled the .. option in the recommendations.",
+					"scope": "language-overridable"
+				},
+				"path-autocomplete.useBackslash": {
+					"type": "boolean",
+					"default": false,
+					"description": "If enabled it will use backslash (\\) as a path separator.",
+					"scope": "language-overridable"
+				},
+				"path-autocomplete.useSingleBackslash": {
+					"type": "boolean",
+					"default": false,
+					"description": "If enabled it will insert a single backslash (\\) even inside quoted strings",
+					"scope": "language-overridable"
+				},
+				"path-autocomplete.enableFolderTrailingSlash": {
+					"type": "boolean",
+					"default": true,
+					"description": "Enables the trailing slash on the folder path insertion.",
+					"scope": "language-overridable"
+				},
+				"path-autocomplete.ignoredFilesPattern": {
+					"type": "string",
+					"default": "",
+					"description": "Glob patterns for disabling the path completion in the specified file types.",
+					"scope": "language-overridable"
+				},
+				"path-autocomplete.ignoredPrefixes": {
+					"type": "array",
+					"default": [],
+					"description": "List of prefixes for which completions will be skipped.",
+					"scope": "language-overridable"
+				}
+			}
+		}
+	},
+	"__metadata": {
+		"id": "0d1241e3-fa60-4f24-8f2a-6d7085677c48",
+		"publisherId": "3a1bd914-dacc-4903-89d9-bd7ff757eb7f",
+		"publisherDisplayName": "Mihai Vilcu",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1720017128916,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery",
+		"size": 335213
+	}
+}
