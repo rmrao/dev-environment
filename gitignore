@@ -6,6 +6,7 @@ scratch/
 wandb/
 checkpoints/
 outputs/
+.TODO.json
 
 # Mac
 .DS_Store
